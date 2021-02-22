@@ -240,11 +240,7 @@ exports.verificaTableMotoboy = (req, res) => {
         } else {
             console.log(result);
             console.log(result.length);
-            if (result != null) {
-                res.send(result);
-            } else {
-                res.send({ error: 'table_not_exists' })
-            }
+            res.send({ table_name: result, size: result.length });
         }
     })
 
