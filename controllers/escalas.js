@@ -1,7 +1,7 @@
 const db = require("../database");
 
 exports.segundaManha = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Segunda' AND fcs.periodo='Manhã'; "
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Segunda' AND fcs.periodo='Manhã'; "
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -13,7 +13,7 @@ exports.segundaManha = (req, res) => {
 }
 
 exports.segundaTarde = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Segunda' AND fcs.periodo='Tarde'; "
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Segunda' AND fcs.periodo='Tarde'; "
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -25,7 +25,7 @@ exports.segundaTarde = (req, res) => {
 }
 
 exports.tercaManha = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Terca' AND fcs.periodo='Manha'; "
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Terca' AND fcs.periodo='Manha'; "
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -37,7 +37,7 @@ exports.tercaManha = (req, res) => {
 }
 
 exports.tercaTarde = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Terca' AND fcs.periodo='Tarde'; "
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Terca' AND fcs.periodo='Tarde'; "
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -49,7 +49,7 @@ exports.tercaTarde = (req, res) => {
 }
 
 exports.quartaManha = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Quarta' AND fcs.periodo='Manha'; "
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Quarta' AND fcs.periodo='Manha'; "
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -61,7 +61,7 @@ exports.quartaManha = (req, res) => {
 }
 
 exports.quartaTarde = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Quarta' AND fcs.periodo='Tarde'; "
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Quarta' AND fcs.periodo='Tarde'; "
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -73,7 +73,7 @@ exports.quartaTarde = (req, res) => {
 }
 
 exports.quintaManha = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Quinta' AND fcs.periodo='Manha'; "
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Quinta' AND fcs.periodo='Manha'; "
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -85,7 +85,7 @@ exports.quintaManha = (req, res) => {
 }
 
 exports.quintaTarde = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Quinta' AND fcs.periodo='Tarde'; "
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Quinta' AND fcs.periodo='Tarde'; "
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -97,7 +97,7 @@ exports.quintaTarde = (req, res) => {
 }
 
 exports.sextaManha = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Sexta' AND fcs.periodo='Manha'; "
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Sexta' AND fcs.periodo='Manha'; "
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -109,7 +109,7 @@ exports.sextaManha = (req, res) => {
 }
 
 exports.sextaTarde = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Sexta' AND fcs.periodo='Tarde'; "
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade AND fcs.diaSemana = 'Sexta' AND fcs.periodo='Tarde'; "
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
