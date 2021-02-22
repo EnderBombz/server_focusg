@@ -10,6 +10,7 @@ exports.items = async(req, res) => {
         } else {
             console.log("teste")
             console.log(result)
+            res.send({ message: "success" })
         }
     })
 }
@@ -23,6 +24,7 @@ exports.servico = async(req, res) => {
             console.log(err)
         } else {
             console.log("teste")
+            res.send({ message: "success" })
             console.log(result)
         }
     })
@@ -38,6 +40,7 @@ exports.cidadeEscala = async(req, res) => {
         if (err) {
             console.log(err)
         } else {
+            res.send({ message: "success" })
             console.log(idCidade + "foi inserido(a) com suscesso!");
         }
     })
@@ -80,7 +83,8 @@ exports.motoboy = async(req, res) => {
         if (err) {
             console.log(err)
         } else {
-            //console.log("|" + colaborador + "|\n" + "|" + periodo + "|\n" + "|" + departamento + "|\n" + "|" + empresa + "|\n" + "|" + assunto + "|\n" + "|" + cidade + "|\n" + "|" + urgente + "|\n" + "|" + data + "|\n" + "|" + observacao + "|\n" + "\n\nOs dados foram inseridos com sucesso foram inseridos com sucesso!");
+            res.send({ message: "success" })
+                //console.log("|" + colaborador + "|\n" + "|" + periodo + "|\n" + "|" + departamento + "|\n" + "|" + empresa + "|\n" + "|" + assunto + "|\n" + "|" + cidade + "|\n" + "|" + urgente + "|\n" + "|" + data + "|\n" + "|" + observacao + "|\n" + "\n\nOs dados foram inseridos com sucesso foram inseridos com sucesso!");
         }
     })
 }
@@ -130,6 +134,7 @@ exports.devolucao = async(req, res) => {
         if (err) {
             console.log(err)
         } else {
+            res.send({ message: "success" })
             console.log([data_cadastroReq, colaboradorReq, periodoReq, empresaReq, cidadeReq, tipoReq, quantidadeReq, motoboyReq, observacaoReq] + "\n\nOs dados foram inseridos com sucesso foram inseridos com sucesso!");
         }
     })
@@ -168,6 +173,7 @@ exports.controle = async(req, res) => {
         if (err) {
             console.log(err)
         } else {
+            res.send({ message: "success" })
             console.table([data, mesRef, cliente, servico_realizado, quantidade, nome, status, departamento, financeiro, valorUnit, valorTotal, observacao, dataComp])
             console.log("Os dados foram inseridos com sucesso foram inseridos com sucesso!");
         }
