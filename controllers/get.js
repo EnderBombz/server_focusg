@@ -239,6 +239,7 @@ exports.verificaTableMotoboy = (req, res) => {
             console.log(err)
         } else {
             console.log(result);
+            console.log(result.length);
             if (result != null) {
                 res.send(result);
             } else {
