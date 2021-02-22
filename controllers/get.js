@@ -239,8 +239,7 @@ exports.verificaTableMotoboy = (req, res) => {
             console.log(err)
         } else {
             console.log(result);
-            console.log(result.lengh)
-            if (result.TABLE_NAME) {
+            if (result != null) {
                 res.send(result);
             } else {
                 res.send({ error: 'table_not_exists' })
