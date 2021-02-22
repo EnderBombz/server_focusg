@@ -10,7 +10,7 @@ exports.motoboy = (req, res) => {
     const sqlFiltro = `INSERT INTO filtro_mes_ano_motoboy(filtro)values('${mesAno}');`
 
 
-    const sqlCreateTableMotoboy = `CREATE TABLE focusgroup.solicitacao_motoboy_${mesAno}(
+    const sqlCreateTableMotoboy = `CREATE TABLE focusgroupapp.solicitacao_motoboy_${mesAno}(
         id INT NOT NULL AUTO_INCREMENT,
         colaborador VARCHAR(200) NOT NULL,
         periodo VARCHAR(10) NOT NULL,
@@ -231,7 +231,7 @@ exports.servicos = (req, res) => {
     let mesAno = mes + "_" + ano;
 
     const sqlCreateTableServicosExtras = `
-    CREATE TABLE focusgroup.controle_servicos_extras_${mesAno}(
+    CREATE TABLE focusgroupapp.controle_servicos_extras_${mesAno}(
     id INT NOT NULL AUTO_INCREMENT,
     data VARCHAR(50) NOT NULL,
     mesRef VARCHAR(50) NOT NULL,

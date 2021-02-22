@@ -246,7 +246,7 @@ exports.confirmEmail = async(req, res) => {
             pass: process.env.GMAIL_NODEMAILER_PASS
         }
 
-        console.log(teste.user,teste.pass);
+        //console.log(teste.user,teste.pass);
 
         const mailOptions = {
             from: 'Forgot Bot <forgot.focus.group@gmail.com>',
