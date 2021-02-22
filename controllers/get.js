@@ -18,7 +18,7 @@ exports.cidadesById = (req, res) => {
 
 
 exports.CidadesEscalas = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.idCidade,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade"
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.idCidade,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade"
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -29,7 +29,7 @@ exports.CidadesEscalas = (req, res) => {
 }
 
 exports.CidadesEscalasById = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.idCidade,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade ORDER BY ID"
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.idCidade,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade ORDER BY ID"
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -39,7 +39,7 @@ exports.CidadesEscalasById = (req, res) => {
     })
 }
 exports.CidadesEscalasById = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.idCidade,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade"
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.idCidade,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade"
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -49,7 +49,7 @@ exports.CidadesEscalasById = (req, res) => {
     })
 }
 exports.CidadesEscalasById = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.idCidade,fcs.periodo,fcs.diaSemana FROM focusgroup.cidades fc INNER JOIN focusgroup.cidades_escalas fcs ON fc.id = fcs.idCidade"
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.idCidade,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade"
 
     db.query(sqlSelect, (err, result) => {
         if (err) {
