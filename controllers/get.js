@@ -237,10 +237,14 @@ exports.verificaTableMotoboy = (req, res) => {
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
-            res.send({ error: 'table_not_exists' })
         } else {
             console.log(result);
-            res.send(result);
+            console.log(result.lengh)
+            if (result.lengh > 0) {
+                res.send(result);
+            } else {
+                res.send({ error: 'table_not_exists' })
+            }
         }
     })
 
