@@ -30,48 +30,20 @@ exports.motoboy = (req, res) => {
       COLLATE = utf8_unicode_ci;
       `
 
-
-
-    const sqlSelect = `SELECT TABLE_NAME 
-    FROM INFORMATION_SCHEMA.TABLES
-    WHERE TABLE_NAME LIKE '%solicitacao_motoboy_%'`
-
-    db.query(sqlSelect, (err, result) => {
+    db.query(sqlCreateTableMotoboy, (err) => {
         if (err) {
-            console.log(err);
+            console.log(err.code);
         } else {
-
-            let i = 0;
-            let tabelas = result;
-
-            for (i = 0; i < tabelas.length; i++) {
-
-                if (tabelas[i].TABLE_NAME == `solicitacao_motoboy_${mesAno}`) {
-                    console.log('A tabela existe');
-                    break;
+            db.query(sqlFiltro, (err) => {
+                if (err) {
+                    console.log(err);
                 } else {
-                    //res.json(result)
-                    db.query(sqlCreateTableMotoboy, (err) => {
-                        if (err) {
-                            console.log(err.code);
-                            res.send(err.code);
-                        } else {
-                            db.query(sqlFiltro, (err) => {
-                                if (err) {
-                                    console.log(err);
-                                } else {
-                                    console.log('filtro atualizado')
-                                }
-                            })
-                            console.log(`solicitacao_motoboy_${mesAno} criada com sucesso!`);
-                        }
-                    })
+                    console.log('filtro atualizado')
                 }
-            }
-
+            })
+            console.log(`solicitacao_motoboy_${mesAno} criada com sucesso!`);
         }
     })
-
 }
 
 exports.uber = (req, res) => {
@@ -103,51 +75,26 @@ exports.uber = (req, res) => {
 
     const sqlFiltro = `INSERT INTO filtro_mes_ano_uber(filtro)values('${mesAno}'); `
 
-    const sqlSelect = `SELECT TABLE_NAME 
-    FROM INFORMATION_SCHEMA.TABLES
-    WHERE TABLE_NAME LIKE '%solicitacao_uber_%'`
 
-    db.query(sqlSelect, (err, result) => {
+    db.query(sqlCreateTableUber, (err) => {
         if (err) {
-            console.log(err);
+            console.log(err.code);
         } else {
-
-            let i = 0;
-            let tabelas = result;
-            console.log(result);
-            for (i = 0; i < tabelas.length; i++) {
-
-                if (tabelas[i].TABLE_NAME == `solicitacao_uber_${mesAno}`) {
-                    console.log('A tabela existe');
-                    break;
-                } else {
-                    //res.json(result)
-                    db.query(sqlCreateTableUber, (err) => {
-                        if (err) {
-                            console.log(err.code);
-                            res.send(err.code);
-                        } else {
-                            if (err) {
-                                console.log(err);
-                            } else {
-                                db.query(sqlFiltro, (err) => {
-                                    if (err) {
-                                        console.log(err);
-                                    } else {
-                                        console.log('filtro atualizado')
-                                    }
-                                })
-                                console.log(`solicitacao_uber_${mesAno} criada com sucesso!`);
-                            }
-
-                        }
-                    })
-                }
+            if (err) {
+                console.log(err);
+            } else {
+                db.query(sqlFiltro, (err) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log('filtro atualizado')
+                    }
+                })
+                console.log(`solicitacao_uber_${mesAno} criada com sucesso!`);
             }
 
         }
     })
-
 }
 
 exports.devolucao = (req, res) => {
@@ -179,50 +126,26 @@ exports.devolucao = (req, res) => {
 
     const sqlFiltro = `INSERT INTO filtro_mes_ano_devolucao(filtro)values('${mesAno}'); `
 
-    const sqlSelect = `SELECT TABLE_NAME 
-    FROM INFORMATION_SCHEMA.TABLES
-    WHERE TABLE_NAME LIKE '%solicitacao_devolucao_%'`
-
-    db.query(sqlSelect, (err, result) => {
+    db.query(sqlCreateTableDevolucoes, (err) => {
         if (err) {
-            console.log(err);
+            console.log(err.code);
         } else {
-
-            let i = 0;
-            let tabelas = result;
-            console.log(result);
-            for (i = 0; i < tabelas.length; i++) {
-
-                if (tabelas[i].TABLE_NAME == `solicitacao_devolucao_${mesAno}`) {
-                    console.log('A tabela existe');
-                    break;
-                } else {
-                    //res.json(result)
-                    db.query(sqlCreateTableDevolucoes, (err) => {
-                        if (err) {
-                            console.log(err.code);
-                        } else {
-                            if (err) {
-                                console.log(err);
-                            } else {
-                                db.query(sqlFiltro, (err) => {
-                                    if (err) {
-                                        console.log(err);
-                                        res.send(err.code);
-                                    } else {
-                                        console.log('filtro atualizado')
-                                    }
-                                })
-                                console.log(`solicitacao_devolucao_${mesAno} criada com sucesso!`);
-                            }
-
-                        }
-                    })
-                }
+            if (err) {
+                console.log(err);
+            } else {
+                db.query(sqlFiltro, (err) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log('filtro atualizado')
+                    }
+                })
+                console.log(`solicitacao_devolucao_${mesAno} criada com sucesso!`);
             }
 
         }
     })
+
 
 }
 
@@ -256,46 +179,22 @@ exports.servicos = (req, res) => {
 
     const sqlFiltro = `INSERT INTO filtro_mes_ano_servicos_extras(filtro)values('${mesAno}'); `
 
-    const sqlSelect = `SELECT TABLE_NAME 
-    FROM INFORMATION_SCHEMA.TABLES
-    WHERE TABLE_NAME LIKE '%controle_servicos_extras_%'`
 
-    db.query(sqlSelect, (err, result) => {
+    db.query(sqlCreateTableServicosExtras, (err) => {
         if (err) {
-            console.log(err);
+            console.log(err.code);
         } else {
-
-            let i = 0;
-            let tabelas = result;
-            console.log(result);
-            for (i = 0; i < tabelas.length; i++) {
-
-                if (tabelas[i].TABLE_NAME == `controle_servicos_extras_${mesAno}`) {
-                    console.log('A tabela existe');
-                    break;
-                } else {
-                    //res.json(result)
-                    db.query(sqlCreateTableServicosExtras, (err) => {
-                        if (err) {
-                            console.log(err.code);
-                            res.send(err.code);
-                        } else {
-                            if (err) {
-                                console.log(err);
-                            } else {
-                                db.query(sqlFiltro, (err) => {
-                                    if (err) {
-                                        console.log(err);
-                                    } else {
-                                        console.log('filtro atualizado')
-                                    }
-                                })
-                                console.log(`controle_servicos_extras_${mesAno} criada com sucesso!`);
-                            }
-
-                        }
-                    })
-                }
+            if (err) {
+                console.log(err);
+            } else {
+                db.query(sqlFiltro, (err) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log('filtro atualizado')
+                    }
+                })
+                console.log(`controle_servicos_extras_${mesAno} criada com sucesso!`);
             }
 
         }
