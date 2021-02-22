@@ -245,3 +245,73 @@ exports.verificaTableMotoboy = (req, res) => {
     })
 
 }
+
+exports.verificaTableUber = (req, res) => {
+
+    let data = new Date();
+    let mes = data.getMonth() + 1;
+    let ano = data.getFullYear();
+    let mesAno = mes + "_" + ano;
+
+    const sqlSelect = `SELECT TABLE_NAME 
+    FROM INFORMATION_SCHEMA.TABLES
+    WHERE TABLE_NAME LIKE '%solicitacao_uber_${mesAno}%'`
+
+    db.query(sqlSelect, (err, result) => {
+        if (err) {
+            console.log(err)
+            res.send(err)
+        } else {
+            console.log(result);
+            res.send(result);
+        }
+    })
+
+}
+
+
+exports.verificaTableDevolucao = (req, res) => {
+
+    let data = new Date();
+    let mes = data.getMonth() + 1;
+    let ano = data.getFullYear();
+    let mesAno = mes + "_" + ano;
+
+    const sqlSelect = `SELECT TABLE_NAME 
+    FROM INFORMATION_SCHEMA.TABLES
+    WHERE TABLE_NAME LIKE '%solicitacao_devolucao_${mesAno}%'`
+
+    db.query(sqlSelect, (err, result) => {
+        if (err) {
+            console.log(err)
+            res.send(err)
+        } else {
+            console.log(result);
+            res.send(result);
+        }
+    })
+
+}
+
+exports.verificaTableServicosExtras = (req, res) => {
+
+    let data = new Date();
+    let mes = data.getMonth() + 1;
+    let ano = data.getFullYear();
+    let mesAno = mes + "_" + ano;
+
+    const sqlSelect = `SELECT TABLE_NAME 
+    FROM INFORMATION_SCHEMA.TABLES
+    WHERE TABLE_NAME LIKE '%controle_servicos_extras_${mesAno}%'`
+
+    db.query(sqlSelect, (err, result) => {
+        if (err) {
+            console.log(err)
+            res.send(err)
+        } else {
+            console.log(result);
+            res.send(result);
+        }
+    })
+
+}

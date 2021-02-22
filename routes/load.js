@@ -53,5 +53,8 @@ router.get("/cidadeEscalaSextaTarde", escalas.sextaTarde);
 router.get("/servicoValor/:servico", getController.servicoValor);
 
 router.get("/verificaTableMotoboy", getController.verificaTableMotoboy);
+router.get("/verificaTableUber", getController.verificaTableUber);
+router.get("/verificaTableDevolucao", getController.verificaTableDevolucao);
+router.get("/verificaTableServicosExtras", getController.verificaTableServicosExtras);
 
 module.exports = router;
