@@ -240,7 +240,7 @@ exports.verificaTableMotoboy = (req, res) => {
         } else {
             console.log(result);
             console.log(result.length);
-            res.send({ table_name: result, size: result.length });
+            res.send({ result, size: result.length });
         }
     })
 
