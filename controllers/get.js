@@ -237,6 +237,7 @@ exports.verificaTableMotoboy = (req, res) => {
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
+            res.send({ error: 'table_not_exists' })
         } else {
             console.log(result);
             res.send(result);
@@ -259,7 +260,7 @@ exports.verificaTableUber = (req, res) => {
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
-
+            res.send({ error: 'table_not_exists' })
         } else {
             console.log(result);
             res.send(result);
@@ -283,7 +284,7 @@ exports.verificaTableDevolucao = (req, res) => {
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
-
+            res.send({ error: 'table_not_exists' })
         } else {
             console.log(result);
             res.send(result);
@@ -306,7 +307,7 @@ exports.verificaTableServicosExtras = (req, res) => {
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
-
+            res.send({ error: 'table_not_exists' })
         } else {
             console.log(result);
             res.send(result);
