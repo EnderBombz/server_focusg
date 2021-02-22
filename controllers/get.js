@@ -222,3 +222,24 @@ exports.servicoValor = (req, res) => {
         }
     })
 }
+
+exports.verificaTableMotoboy = (req, res) => {
+
+    let data = new Date();
+    let mes = data.getMonth() + 1;
+    let ano = data.getFullYear();
+    let mesAno = mes + "_" + ano;
+
+    const sqlSelect = `SELECT TABLE_NAME 
+    FROM INFORMATION_SCHEMA.TABLES
+    WHERE TABLE_NAME LIKE '%solicitacao_motoboy_${mesAno}%'`
+
+    db.query(sqlSelect, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(result);
+        }
+    })
+
+}

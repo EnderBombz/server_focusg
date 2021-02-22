@@ -52,6 +52,6 @@ router.get("/cidadeEscalaSextaTarde", escalas.sextaTarde);
 
 router.get("/servicoValor/:servico", getController.servicoValor);
 
-
+router.get("/api/get/verificaTableMotoboy".getController.verificaTableMotoboy);
 
 module.exports = router;

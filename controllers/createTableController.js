@@ -54,6 +54,7 @@ exports.motoboy = (req, res) => {
                     db.query(sqlCreateTableMotoboy, (err) => {
                         if (err) {
                             console.log(err.code);
+                            res.send(err.code);
                         } else {
                             db.query(sqlFiltro, (err) => {
                                 if (err) {
@@ -124,6 +125,7 @@ exports.uber = (req, res) => {
                     db.query(sqlCreateTableUber, (err) => {
                         if (err) {
                             console.log(err.code);
+                            res.send(err.code);
                         } else {
                             if (err) {
                                 console.log(err);
@@ -206,6 +208,7 @@ exports.devolucao = (req, res) => {
                                 db.query(sqlFiltro, (err) => {
                                     if (err) {
                                         console.log(err);
+                                        res.send(err.code);
                                     } else {
                                         console.log('filtro atualizado')
                                     }
@@ -275,6 +278,7 @@ exports.servicos = (req, res) => {
                     db.query(sqlCreateTableServicosExtras, (err) => {
                         if (err) {
                             console.log(err.code);
+                            res.send(err.code);
                         } else {
                             if (err) {
                                 console.log(err);
