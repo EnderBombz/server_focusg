@@ -180,12 +180,12 @@ exports.forgot = async(req, res) => {
                 let transporter = nodemailer.createTransport({
                     service: 'gmail',
                     auth: {
-                        user: 'forgot.focus@gmail.com',
+                        user: 'forgot.focus.group@gmail.com',
                         pass: process.env.GMAIL_NODEMAILER_PASS
                     }
                 });
                 const mailOptions = {
-                    from: 'Forgot Bot <forgot.focus@gmail.com>',
+                    from: 'Forgot Bot <forgot.focus.group@gmail.com>',
                     to: email,
                     subject: 'Yor code to reset your password is ' + code,
                     text: '',
