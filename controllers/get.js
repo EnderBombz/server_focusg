@@ -260,10 +260,10 @@ exports.verificaTableUber = (req, res) => {
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
-            res.send({ error: 'table_not_exists' })
         } else {
             console.log(result);
-            res.send(result);
+            console.log(result.length);
+            res.send({ table_name: result, size: result.length });
         }
     })
 
@@ -284,10 +284,10 @@ exports.verificaTableDevolucao = (req, res) => {
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
-            res.send({ error: 'table_not_exists' })
         } else {
             console.log(result);
-            res.send(result);
+            console.log(result.length);
+            res.send({ table_name: result, size: result.length });
         }
     })
 
@@ -307,10 +307,10 @@ exports.verificaTableServicosExtras = (req, res) => {
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
-            res.send({ error: 'table_not_exists' })
         } else {
             console.log(result);
-            res.send(result);
+            console.log(result.length);
+            res.send({ table_name: result, size: result.length });
         }
     })
 
