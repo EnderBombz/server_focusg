@@ -73,7 +73,7 @@ exports.motoboy = async(req, res) => {
         solicitacao.departamento,
         solicitacao.cidade,
         solicitacao.data,
-        solicitacao.dataComp,
+        dataComp,
         solicitacao.assunto,
         empresa,
         solicitacao.observacao,
@@ -109,6 +109,7 @@ exports.uber = async(req, res) => {
         if (err) {
             console.log(err)
         } else {
+            res.send({ message: "success" });
             console.log("|" + dataSolicitacao + "|\n" + "|" + usuario + "|\n" + "|" + empresa + "|\n" + "|" + cidade + "|\n" + "|" + assunto + "|\n" + "|" + horaIda + "|\n" + "|" + placaUberIda + "|\n" + "|" + valorUberIda + "|\n" + "|" + valorUberIda + "|\n" + conclusao + "|\n" + "\n\nOs dados foram inseridos com sucesso foram inseridos com sucesso!");
         }
     })
