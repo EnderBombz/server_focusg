@@ -14,8 +14,13 @@ router.get("/contas", userController.contas);
 
 router.get("/cidades", getController.cidades);
 router.get("/cidadesById", getController.cidadesById)
+router.get("/cidadesByName", getController.cidadesByName);
+
 router.get("/CidadesEscalasById", getController.CidadesEscalasById)
+router.get("/CidadesEscalasByName", getController.CidadesEscalasByName)
 router.get("/CidadesEscalas", getController.CidadesEscalas)
+
+
 
 router.get("/colaboradores", getController.colaboradores)
 router.get("/colaboradoresByName", getController.colaboradoresOrderByName)
@@ -24,10 +29,17 @@ router.get("/uberUsuarios", getController.uberUsuarios)
 router.get("/uberUsuariosByName", getController.uberUsuariosOrderByName)
 
 router.get("/departamento", getController.departamento);
+router.get("/departamentoByName", getController.departamentoByName);
+
 router.get("/empresas", getController.empresas);
 router.get("/empresasByName", getController.empresasByName);
+
 router.get("/motoboys", getController.motoboys);
+router.get("/motoboysByName", getController.motoboysByName);
+
 router.get("/servicos", getController.servicos);
+router.get("/servicosByName", getController.servicosByName);
+
 
 router.get("/solicitacaoMotoboy/:filtro", getController.solicitacaoMotoboy)
 router.get("/solicitacaoUber/:filtro", getController.solicitacaoUber)

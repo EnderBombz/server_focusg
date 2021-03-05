@@ -164,6 +164,7 @@ exports.servicos = (req, res) => {
     cliente VARCHAR(300) NOT NULL,
     servico_realizado VARCHAR(300) NOT NULL,
     quantidade INT NOT NULL,
+    dataCadastro VARCHAR(45) NOT NULL,
     nome VARCHAR(100) NOT NULL,
     status VARCHAR(50) NULL,
     departamento VARCHAR(100) NOT NULL,

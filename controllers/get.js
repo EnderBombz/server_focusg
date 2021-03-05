@@ -16,6 +16,11 @@ exports.cidadesById = (req, res) => {
     db.query(sqlSelect, (err, result) => { res.send(result) })
 }
 
+exports.cidadesByName = (req, res) => {
+    const sqlSelect = `SELECT * FROM cidades  ORDER BY nome`
+    db.query(sqlSelect, (err, result) => { res.send(result) })
+}
+
 
 exports.CidadesEscalas = (req, res) => {
     const sqlSelect = "SELECT fcs.id,fc.nome,fcs.idCidade,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade"
@@ -38,8 +43,9 @@ exports.CidadesEscalasById = (req, res) => {
         }
     })
 }
-exports.CidadesEscalasById = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.idCidade,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade"
+
+exports.CidadesEscalasByName = (req, res) => {
+    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.idCidade,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade ORDER BY nome"
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err)
@@ -48,18 +54,6 @@ exports.CidadesEscalasById = (req, res) => {
         }
     })
 }
-exports.CidadesEscalasById = (req, res) => {
-    const sqlSelect = "SELECT fcs.id,fc.nome,fcs.idCidade,fcs.periodo,fcs.diaSemana FROM focusgroupapp.cidades fc INNER JOIN focusgroupapp.cidades_escalas fcs ON fc.id = fcs.idCidade"
-
-    db.query(sqlSelect, (err, result) => {
-        if (err) {
-            console.log(err)
-        } else {
-            res.send(result)
-        }
-    })
-}
-
 
 exports.colaboradores = async(req, res) => {
     const sqlSelect = "SELECT * FROM colaboradores"
@@ -115,6 +109,18 @@ exports.departamento = async(req, res) => {
     })
 }
 
+exports.departamentoByName = async(req, res) => {
+    const sqlSelect = "SELECT * FROM departamento ORDER BY nome"
+    db.query(sqlSelect, (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+
+            res.send(result)
+        }
+    })
+}
+
 exports.empresas = async(req, res) => {
     const sqlSelect = "SELECT * FROM empresas ORDER BY id"
     db.query(sqlSelect, (err, result) => {
@@ -152,6 +158,17 @@ exports.motoboys = async(req, res) => {
     })
 }
 
+exports.motoboysByName = async(req, res) => {
+    const sqlSelect = "SELECT * FROM motoboys ORDER BY nome"
+    await db.query(sqlSelect, (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+
+            res.send(result)
+        }
+    })
+}
 
 
 exports.solicitacaoMotoboy = (req, res) => {
@@ -195,6 +212,18 @@ exports.controleServicos = (req, res) => {
 
 exports.servicos = async(req, res) => {
     const sqlSelect = "SELECT * FROM servicos"
+    await db.query(sqlSelect, (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+
+            res.send(result)
+        }
+    })
+}
+
+exports.servicosByName = async(req, res) => {
+    const sqlSelect = "SELECT * FROM servicos ORDER BY tipoServico"
     await db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err);
