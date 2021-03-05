@@ -60,6 +60,7 @@ exports.uber = (req, res) => {
     usuario VARCHAR(200) NOT NULL,
     empresa VARCHAR(300) NOT NULL,
     cidade VARCHAR(200) NOT NULL,
+    horaVolta VARCHAR(45) NOT NULL,
     assunto TEXT NULL,
     horaIda VARCHAR(50) NOT NULL,
     placaUberIda VARCHAR(8) NOT NULL,
