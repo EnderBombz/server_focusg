@@ -1,10 +1,10 @@
 const db = require("../database");
 
 exports.items = async(req, res) => {
-    const { nome } = req.body
+    const { nome, id } = req.body
     const table = req.params.table
-    const sqlInsert = `INSERT INTO ${table}(nome)VALUES(?)`;
-    await db.query(sqlInsert, nome, (err, result) => {
+    const sqlInsert = `INSERT INTO ${table}(id,nome)VALUES(?,?)`;
+    await db.query(sqlInsert, [id, nome], (err, result) => {
         if (err) {
             console.log(err)
         } else {

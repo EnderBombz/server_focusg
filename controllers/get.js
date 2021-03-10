@@ -122,7 +122,7 @@ exports.departamentoByName = async(req, res) => {
 }
 
 exports.empresas = async(req, res) => {
-    const sqlSelect = "SELECT * FROM empresas ORDER BY id"
+    const sqlSelect = "SELECT * FROM empresas ORDER BY nome"
     db.query(sqlSelect, (err, result) => {
         if (err) {
             console.log(err);

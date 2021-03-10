@@ -48,13 +48,11 @@ exports.solicitacaoMotoboy = (req, res) => {
 
     let filtro = req.params.filtro;
 
-    const status = req.body.status;
-    const motoboy = req.body.motoboy;
-    const id = req.body.id;
-    console.log(id);
+    const { status, motoboy, id, data } = req.body
+    console.log(id, data);
 
-    const sqlUpdate = `UPDATE solicitacao_motoboy_${filtro} SET status = ?,motoboy = ? WHERE id= ?`;
-    db.query(sqlUpdate, [status, motoboy, id], (err, result) => {
+    const sqlUpdate = `UPDATE solicitacao_motoboy_${filtro} SET status = ?,motoboy = ?,data = ? WHERE id= ?`;
+    db.query(sqlUpdate, [status, motoboy, data, id], (err, result) => {
         if (err) {
             console.log(err)
         } else {
