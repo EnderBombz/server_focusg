@@ -3,6 +3,7 @@ const db = require("../database");
 exports.items = async(req, res) => {
     const { nome, id } = req.body
     const table = req.params.table
+    console.log(id, nome);
     const sqlInsert = `INSERT INTO ${table}(id,nome)VALUES(?,?)`;
     await db.query(sqlInsert, [id, nome], (err, result) => {
         if (err) {
