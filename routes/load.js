@@ -67,6 +67,9 @@ router.get("/servicoValor/:servico", getController.servicoValor);
 router.get("/verificaTableMotoboy", getController.verificaTableMotoboy);
 router.get("/verificaTableUber", getController.verificaTableUber);
 router.get("/verificaTableDevolucao", getController.verificaTableDevolucao);
+
 router.get("/verificaTableServicosExtras", getController.verificaTableServicosExtras);
+router.get("/verificaTableServicosExtrasProx", getController.verificaTableServicosExtrasProx);
+router.get("/verificaStatusFiltro/:filtro", getController.verificaStatusFiltro);
 
 module.exports = router;

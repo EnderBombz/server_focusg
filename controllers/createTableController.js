@@ -203,3 +203,57 @@ exports.servicos = (req, res) => {
     })
 
 }
+
+exports.servicosProx = (req, res) => {
+
+    let data = new Date();
+    let mes = data.getMonth() + 1;
+    let ano = data.getFullYear();
+    let mesAno = mes + 1 + "_" + ano;
+
+    const sqlCreateTableServicosExtras = `
+    CREATE TABLE focusgroupapp.controle_servicos_extras_${mesAno}(
+    id INT NOT NULL AUTO_INCREMENT,
+    data VARCHAR(50) NOT NULL,
+    mesRef VARCHAR(50) NOT NULL,
+    cliente VARCHAR(300) NOT NULL,
+    servico_realizado VARCHAR(300) NOT NULL,
+    quantidade INT NOT NULL,
+    dataCadastro VARCHAR(45) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    status VARCHAR(50) NULL,
+    departamento VARCHAR(100) NOT NULL,
+    financeiro VARCHAR(50) NULL,
+    valorUnit DOUBLE NOT NULL,
+    valorTotal DOUBLE NOT NULL, observacao TEXT NULL,
+    PRIMARY KEY (id)
+    )
+    ENGINE = InnoDB
+    DEFAULT 
+    CHARACTER SET = utf8
+    COLLATE = utf8_unicode_ci;`
+
+    const sqlFiltro = `INSERT INTO filtro_mes_ano_servicos_extras(filtro,fechamento)values('${mesAno}','aberto'); `
+
+
+    db.query(sqlCreateTableServicosExtras, (err) => {
+        if (err) {
+            console.log(err.code);
+        } else {
+            if (err) {
+                console.log(err);
+            } else {
+                db.query(sqlFiltro, (err) => {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log('filtro atualizado')
+                    }
+                })
+                console.log(`controle_servicos_extras_${mesAno} criada com sucesso!`);
+            }
+
+        }
+    })
+
+}

@@ -344,3 +344,44 @@ exports.verificaTableServicosExtras = (req, res) => {
     })
 
 }
+
+exports.verificaTableServicosExtrasProx = (req, res) => {
+
+    let data = new Date();
+    let mes = data.getMonth() + 1;
+    let ano = data.getFullYear();
+    let mesAno = (mes + 1) + "_" + ano;
+
+    const sqlSelect = `SELECT TABLE_NAME 
+    FROM INFORMATION_SCHEMA.TABLES
+    WHERE TABLE_NAME LIKE '%controle_servicos_extras_${mesAno}%'`
+
+    db.query(sqlSelect, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(result);
+            console.log(result.length);
+            res.send({ table_name: result, size: result.length });
+        }
+    })
+
+}
+
+exports.verificaStatusFiltro = (req, res) => {
+
+    const { filtro } = req.params;
+
+    const sqlSelect = `SELECT fechamento FROM filtro_mes_ano_servicos_extras WHERE filtro = ?`
+
+    db.query(sqlSelect, filtro, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(result);
+            console.log(result.length);
+            res.send({ status: result });
+        }
+    })
+
+}
