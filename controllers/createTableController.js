@@ -211,6 +211,17 @@ exports.servicosProx = (req, res) => {
     let ano = data.getFullYear();
     let mesAno = mes + 1 + "_" + ano;
 
+    if (mes > 12) {
+        ano = ano + 1;
+        let janeiro = 1
+        mesAno = janeiro + "_" + ano;
+        console.log(mesAno)
+    } else {
+        mesAno = mes + "_" + ano;
+        console.log(mesAno)
+    }
+
+
     const sqlCreateTableServicosExtras = `
     CREATE TABLE focusgroupapp.controle_servicos_extras_${mesAno}(
     id INT NOT NULL AUTO_INCREMENT,
