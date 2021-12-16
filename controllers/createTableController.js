@@ -209,11 +209,14 @@ exports.servicosProx = (req, res) => {
     let data = new Date();
     let mes = data.getMonth() + 1;
     let ano = data.getFullYear();
-    let mesAno = mes + 1 + "_" + ano;
+    let mesAno;
 
-    if (mes > 12) {
+    console.log(`${mes} é maior que 12?`)
+    if (mes == 12) {
+        console.log("sim, é maior")
+        console.log("então ano vai ser somado 1")
         ano = ano + 1;
-        let janeiro = 1
+        let janeiro = "1"
         mesAno = janeiro + "_" + ano;
         console.log(mesAno)
     } else {
